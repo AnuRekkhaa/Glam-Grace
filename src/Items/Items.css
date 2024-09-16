@@ -1,0 +1,19 @@
+.item{
+    width: 280px;
+}
+.item p{
+    margin: 6px 0;
+    font-size: 20px;
+    color: rgb(250, 0, 104);
+}
+.descript p{
+    margin-top: 5px;
+    font-size: 18px;
+    color: rgb(104, 104, 104);
+    text-decoration: none;
+}
+.item:hover{
+    transform: scale(1.15);
+    transition: 0.6s;
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+.cartitem{
+    margin: 100px 150px;
+}
+.cartitem hr{
+    border: 0;
+    height: 2px;
+    background: white
+}
+.format-main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+    padding: 20px 0;
+    color: rgb(65, 65, 65);
+    font-size: 18px;
+    font-weight: 600;
+}
+.format{
+    font-size: 17px;
+    font-weight: 500;
+}
+.carticon-producticon{
+    height: 60px;
+}
+.remove-icon{
+    width: 15px;
+    margin: 0 40px;
+    cursor: pointer;
+}
+.quantity{
+    width: 60px;
+    height: 50px;
+    border: 1px solid rgb(196, 196, 196);
+    background: white;
+}
+.cartdown{
+    display: flex;
+    margin: 100px 0px;
+    flex-direction: column;
+    gap: 10px;
+}

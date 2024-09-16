@@ -1,0 +1,20 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to right, rgb(255, 211, 218),rgb(255, 183, 183)); 
+    padding: 5px;
+    border-radius: 10px;
+    margin: 80px 60px 30px;
+}  
+.flex-item {
+    flex: 1; 
+    width: 30%;
+    border: 1px rgb(255, 3, 200);
+    padding: 20px;
+    text-align: center;
+}
+.flex-item img{
+    width: 70px;
+    height: 80px;
+}
+  

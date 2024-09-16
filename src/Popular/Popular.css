@@ -1,0 +1,35 @@
+.popular{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 500px;
+}
+.popular h2{
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(252, 7, 7);
+    font-size: 40px;
+    font-weight: 600;
+}
+.popular img{
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.popular p{
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(255, 25, 25);
+    font-size: 17px;
+}
+.popular-items{
+    display: flex;
+    margin-top: 10px;
+    gap: 40px;
+    justify-content: space-around;
+    padding-top: 8px;
+}
