@@ -19,7 +19,7 @@ const Home = () => {
         <Flex />
         <ImageSlider images={Image} />
         <Perfume />
-        
+        <Offers />
     </div>
   )
 }

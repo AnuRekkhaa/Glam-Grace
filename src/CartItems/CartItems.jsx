@@ -6,6 +6,11 @@ import removeicon from '../assets/remove.png';
 const CartItems = () => {
   const { all_products, cartItems, removeFromCart } = useContext(ShopContext);
 
+  const subtotal = Object.keys(cartItems).reduce((acc, productId) => {
+    const product = all_products.find(p => p.id === Number(productId));
+    return product ? acc + product.new_price * cartItems[productId] : acc;
+  }, 0);
+
   return (
     <div className='cartitem'>
       <div className="format-main">
@@ -17,9 +22,10 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
-      {all_products.map((product) => {
-        if (cartItems[product.id] > 0) {
-          const quantity = cartItems[product.id];
+      {Object.keys(cartItems).map((productId) => {
+        const product = all_products.find(p => p.id === Number(productId));
+        if (product) {
+          const quantity = cartItems[productId];
           const totalPrice = product.new_price * quantity;
 
           return (
@@ -43,12 +49,12 @@ const CartItems = () => {
       })}
       <div className="cartdown">
         <h3>Cart Total</h3>
-        <p>Subtotal: Rs. {cartItems.reduce((acc, quantity) => acc + (quantity * all_products[quantity].new_price), 0)}</p>
+        <p>Subtotal: Rs. {subtotal}</p>
         <p>Shipping: Rs. 50</p>
-        <p>Total: Rs. {cartItems.reduce((acc, quantity) => acc + (quantity * all_products[quantity].new_price), 0) + 50}</p>
+        <p>Total: Rs. {subtotal + 50}</p>
         <button className='checkout-btn'>Checkout</button>
         <hr />
-        <p>Your shopping cart is empty</p>
+        {Object.keys(cartItems).length === 0 && <p>Your shopping cart is empty</p>}
       </div>
     </div>
   );

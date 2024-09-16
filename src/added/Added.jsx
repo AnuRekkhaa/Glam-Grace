@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Added.css';
 import arrow from '../assets/arrow.png';
+import { ShopContext } from '../Context/ShopContext';
 
-const Added = ({ product }) => {
+const Added = ( product ) => {
+
+  const {addToCart} =useContext(ShopContext);
+
   return (
     <div className='add'>
       <div className='breadcrumbs'>
@@ -21,7 +25,7 @@ const Added = ({ product }) => {
           <p className='old-price'>MRP: Rs.{product.old_price}</p>
           <p className='new-price'>Offer Price: Rs.{product.new_price}</p>
         </div>
-        <button>ADD TO CART</button>
+        <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
       </div>
     </div>
   );

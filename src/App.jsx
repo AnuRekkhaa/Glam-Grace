@@ -24,12 +24,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Makeup' element={<Category banner={makeup} category="Makeup" />} />
-          <Route path='/Skin' element={<Category banner={skin} Category="Skin" />} />
-          <Route path='/Body' element={<Category banner={body} Category="Body" />} />
-          <Route path='/Hair' element={<Category banner={hair} Category="Hair" />} />
-          <Route path='/Fragrance' element={<Category banner={fragrance} Category="Fragrance" />} />
-          <Route path='/Offers' element={<Category banner={offers} Category="Offers" />} />
-          <Route path="/product/:productId" element={<Product />} />
+          <Route path='/Skin' element={<Category banner={skin} category="Skin" />} />
+          <Route path='/Body' element={<Category banner={body} category="Body" />} />
+          <Route path='/Hair' element={<Category banner={hair} category="Hair" />} />
+          <Route path='/Fragrance' element={<Category banner={fragrance} category="Fragrance" />} />
+          <Route path='/Offers' element={<Category banner={offers} category="Offers" />} />
+          <Route path="/Product/:ProductId" element={<Product />} />
           <Route path='/search' element={<Search />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
