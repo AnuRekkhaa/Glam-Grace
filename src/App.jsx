@@ -6,7 +6,7 @@ import Home from './Pages/Home';
 import Category from './Pages/Category';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart'; 
-import Login from './Pages/Login';
+import Login from './Pages/Login'
 import Search from './Pages/Search';
 import Footer from './Footer/Footer';
 import makeup from './assets/makeup-banner.jpg'
