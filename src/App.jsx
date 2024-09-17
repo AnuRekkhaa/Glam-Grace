@@ -30,8 +30,8 @@ function App() {
           <Route path='/Fragrance' element={<Category banner={fragrance} category="Fragrance" />} />
           <Route path='/Offers' element={<Category banner={offers} category="Offers" />} />
           <Route path="/Product/:id" element={<Product />} />
-          <Route path='/search' element={<Search />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/Search' element={<Search />} />
+          <Route path='/Cart' element={<Cart />} />
           <Route path='/Login' element={<Login />} />
         </Routes>
         <Footer />
