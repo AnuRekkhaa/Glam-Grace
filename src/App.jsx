@@ -6,7 +6,6 @@ import Home from './Pages/Home';
 import Category from './Pages/Category';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart'; 
-import Login from './Pages/login'
 import Search from './Pages/Search';
 import Footer from './Footer/Footer';
 import makeup from './assets/makeup-banner.jpg'
@@ -15,6 +14,7 @@ import body from './assets/body-banner.jpg'
 import hair from './assets/hair-banner.jpg'
 import fragrance from './assets/perfume-banner.jpg'
 import offers from './assets/offers-banner.jpg'
+import Signup from './Pages/Signup';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
           <Route path="/Product/:id" element={<Product />} />
           <Route path='/Search' element={<Search />} />
           <Route path='/Cart' element={<Cart />} />
-          <Route path='/Login' element={<Login />} />
+          <Route path='/Signup' element={<Signup />} />
         </Routes>
         <Footer />
       </BrowserRouter>
