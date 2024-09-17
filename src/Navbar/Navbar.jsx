@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="cart-count">0</div>
 
       <div className="login">
-        <Link to='/login'><button><img src={login} alt="Login" /></button></Link>
+        <Link to='/Signup'><button><img src={login} alt="Login" /></button></Link>
       </div>
     </div>
   );
