@@ -6,13 +6,23 @@ import removeicon from '../assets/remove.png';
 const CartItems = () => {
   const { all_products, cartItems, removeFromCart } = useContext(ShopContext);
 
-  const subtotal = Object.keys(cartItems).reduce((acc, productId) => {
-    const product = all_products.find(p => p.id === Number(productId));
-    return product ? acc + product.new_price * cartItems[productId] : acc;
+  console.log('All Products:', all_products);
+  console.log('Cart Items:', cartItems);
+
+  const subtotal = Object.keys(cartItems).reduce((acc, id) => {
+    const product = all_products.find(p => p.id === Number(id));
+    if (product) {
+      const quantity = Number(cartItems[id]);
+      const total = product.new_price * quantity;
+      return acc + total;
+    }
+    return acc;
   }, 0);
 
   return (
     <div className='cartitem'>
+      <h1>CART</h1>
+      <h2>Your cart is ready!</h2>
       <div className="format-main">
         <p>Products</p>
         <p>Title</p>
@@ -22,39 +32,41 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
-      {Object.keys(cartItems).map((productId) => {
-        const product = all_products.find(p => p.id === Number(productId));
-        if (product) {
-          const quantity = cartItems[productId];
-          const totalPrice = product.new_price * quantity;
+      {Object.keys(cartItems).length > 0 ? (
+        Object.keys(cartItems).map((id) => {
+          const product = all_products.find(p => p.id === Number(id));
+          if (product) {
+            const quantity = Number(cartItems[id] || 0);
+            const totalPrice = product.new_price * quantity;
 
-          return (
-            <div key={product.id} className="format format-main">
-              <img src={product.image} alt={product.name} className='carticon-producticon'/>
-              <p>{product.name}</p>
-              <p>Rs.{product.new_price}</p>
-              <button className='quantity'>{quantity}</button>
-              <p>Rs.{totalPrice}</p>
-              <img 
-                src={removeicon} 
-                onClick={() => removeFromCart(product.id)} 
-                alt="Remove item"
-                className='remove-icon'
-              />
-              <hr />
-            </div>
-          );
-        }
-        return null;
-      })}
+            return (
+              <div key={product.id} className="format format-main">
+                <img src={product.image} alt={product.name} className='carticon-producticon'/>
+                <p>{product.name}</p>
+                <p>Rs.{product.new_price.toFixed(2)}</p>
+                <button className='quantity'>{quantity}</button>
+                <p>Rs.{totalPrice.toFixed(2)}</p>
+                <img 
+                  src={removeicon} 
+                  onClick={() => removeFromCart(product.id)} 
+                  alt="Remove item"
+                  className='remove-icon'
+                />
+              </div>
+            );
+          }
+          return null;
+        })
+      ) : (
+        <p>Your shopping cart is empty</p>
+      )}
       <div className="cartdown">
-        <h3>Cart Total</h3>
-        <p>Subtotal: Rs. {subtotal}</p>
-        <p>Shipping: Rs. 50</p>
-        <p>Total: Rs. {subtotal + 50}</p>
-        <button className='checkout-btn'>Checkout</button>
         <hr />
-        {Object.keys(cartItems).length === 0 && <p>Your shopping cart is empty</p>}
+        <h3>Cart Total</h3>
+        <p>Subtotal: Rs. {subtotal.toFixed(2)}</p>
+        <p>Shipping: Rs. 50</p>
+        <p>Total: Rs. {(subtotal + 50).toFixed(2)}</p>
+        <button className='checkout-btn'>Checkout</button>
       </div>
     </div>
   );

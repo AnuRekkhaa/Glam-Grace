@@ -1,18 +1,20 @@
 import React, { useContext } from 'react'
 import {ShopContext} from '../Context/ShopContext'
 import { useParams } from 'react-router-dom';
-import Added from '../added/added';
-
+import Added from '../added/Added';
 
 const Product = () => {
   const {all_products} = useContext(ShopContext);
-  const {productId} = useParams();
-  const product = all_products.find((e)=> e.id === Number(productId))
-  console.log(productId);
+  const {id} = useParams();
+  console.log('useParams:',useParams());
+  console.log('id:',id);
+
+  const product = all_products?.find((e)=> e.id === Number(id))
+  console.log('product:',product);
 
   return (
     <div>
-      <Added product= {product}/>
+      {product?<Added product= {product}/>: <p>Product not found</p>}
     </div>
   )
 }

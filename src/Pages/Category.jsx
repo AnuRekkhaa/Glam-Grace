@@ -21,6 +21,7 @@ const Category = ({ banner, category }) => {
           filteredProducts.map(product => (
             <Rate
               key={product.id}
+              id={product.id}
               name={product.name}
               image={product.image}
               old_price={product.old_price}

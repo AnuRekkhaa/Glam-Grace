@@ -8,6 +8,7 @@ import brand1 from '../assets/brand1.jpg'
 import brand2 from '../assets/brand2.png'
 import brand3 from '../assets/brand3.jpg'
 import Perfume from '../Perfumes/Perfumes'
+import Inter from '../Inter/Inter'
 
 const Home = () => {
   const Image = [brand1,brand2,brand3]; 
@@ -20,6 +21,7 @@ const Home = () => {
         <ImageSlider images={Image} />
         <Perfume />
         <Offers />
+        <Inter />
     </div>
   )
 }
